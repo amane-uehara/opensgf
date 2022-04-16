@@ -858,9 +858,9 @@
           this.regions.left = g("left", this.element);
           this.element.appendChild(this.dom.center);
           this.regions.right = g("right", this.element);
-          this.regions.top = g("top", this.dom.center);
-          this.dom.center.appendChild(this.dom.board);
           this.regions.bottom = g("bottom", this.dom.center);
+          this.dom.center.appendChild(this.dom.board);
+          this.regions.top = g("top", this.dom.center);
           this.board = new b.Board(this.dom.board, this.config.board);
           this.init();
           this.components = {};
