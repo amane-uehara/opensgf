@@ -465,8 +465,6 @@ button.wgo-button {
 	border: 1px solid rgba(200,200,200,0.3);
 	border-radius: 2px;
 	background-color: rgba(255,255,255,0.3);
-	width: 44px;
-	height: 44px;
 	margin: 0 3px;
 	vertical-align: middle;
 }
@@ -504,45 +502,62 @@ button.wgo-button.wgo-selected:hover {
 	left: 1px;
 }
 
-.wgo-button-first::before, .wgo-button-multiprev::before, .wgo-button-previous::before  {
-	transform: scaleX(-1);
-	-moz-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	-ms-transform: scaleX(-1);
-}
-
 .wgo-button-first::before {
+	width: 15px;
+	height: 15px;
 	content: '\e81a';
+  transform: scale(-1, 1);
+	margin-left: -5px;
 }
 
 .wgo-button-multiprev::before {
+	width: 15px;
+	height: 15px;
 	content: '\e817';
+  transform: scale(-1, 1);
 	margin-left: -5px;
 }
 
 .wgo-button-previous::before {
+	width: 200px;
+	height: 120px;
 	content: '\e80c';
+  transform: scale(-1, 1);
+	margin-left: -5px;
 }
 
 .wgo-button-next::before {
+	width: 200px;
+	height: 120px;
 	content: '\e80c';
+	margin-left: -5px;
 }
 
 .wgo-button-multinext::before {
+	width: 15px;
+	height: 15px;
 	content: '\e817';
+	margin-left: -5px;
 }
 
 .wgo-button-last::before {
+	width: 15px;
+	height: 15px;
 	content: '\e81a';
+	margin-left: -5px;
 }
 
 .wgo-button-menu::before  {
+	width: 15px;
+	height: 15px;
 	content: '\e81b';
 	font-size: 25px;
 	font-weight: normal;
 	padding-top: 5px;
 }
 .wgo-button-about::before  {
+	width: 15px;
+	height: 15px;
 	content: '\e80f';
 	font-size: 30px;
 	font-weight: normal;

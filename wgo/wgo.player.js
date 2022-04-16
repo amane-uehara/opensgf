@@ -1479,11 +1479,20 @@
           widgets: [{
               constructor: f.Button,
               args: {
-                  name: "menu",
-                  togglable: !0,
-                  click: h
+                  name: "previous",
+                  disabled: !0,
+                  multiple: !0,
+                  init: function(b) {
+                      b.addEventListener("update", l.bind(this));
+                      b.addEventListener("frozen", k.bind(this));
+                      b.addEventListener("unfrozen", a.bind(this))
+                  },
+                  click: function(a) {
+                      a.previous()
+                  }
               }
-          }]
+          }
+        ]
       }
   }, {
       constructor: f.Group,
@@ -1492,9 +1501,16 @@
           widgets: [{
               constructor: f.Button,
               args: {
-                  name: "about",
+                  name: "next",
+                  disabled: !0,
+                  multiple: !0,
+                  init: function(b) {
+                      b.addEventListener("update", d.bind(this));
+                      b.addEventListener("frozen", k.bind(this));
+                      b.addEventListener("unfrozen", a.bind(this))
+                  },
                   click: function(a) {
-                      a.showMessage(b.t("about-text"))
+                      a.next()
                   }
               }
           }]
@@ -1504,6 +1520,13 @@
       args: {
           name: "control",
           widgets: [{
+              constructor: f.Button,
+              args: {
+                  name: "menu",
+                  togglable: !0,
+                  click: h
+              }
+          }, {
               constructor: f.Button,
               args: {
                   name: "first",
@@ -1536,37 +1559,7 @@
                   }
               }
           }, {
-              constructor: f.Button,
-              args: {
-                  name: "previous",
-                  disabled: !0,
-                  multiple: !0,
-                  init: function(b) {
-                      b.addEventListener("update", l.bind(this));
-                      b.addEventListener("frozen", k.bind(this));
-                      b.addEventListener("unfrozen", a.bind(this))
-                  },
-                  click: function(a) {
-                      a.previous()
-                  }
-              }
-          }, {
               constructor: f.MoveNumber
-          }, {
-              constructor: f.Button,
-              args: {
-                  name: "next",
-                  disabled: !0,
-                  multiple: !0,
-                  init: function(b) {
-                      b.addEventListener("update", d.bind(this));
-                      b.addEventListener("frozen", k.bind(this));
-                      b.addEventListener("unfrozen", a.bind(this))
-                  },
-                  click: function(a) {
-                      a.next()
-                  }
-              }
           }, {
               constructor: f.Button,
               args: {
@@ -1596,6 +1589,14 @@
                   },
                   click: function(a) {
                       a.last()
+                  }
+              }
+          }, {
+              constructor: f.Button,
+              args: {
+                  name: "about",
+                  click: function(a) {
+                      a.showMessage(b.t("about-text"))
                   }
               }
           }]
