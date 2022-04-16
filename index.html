@@ -12,6 +12,9 @@
 
 <script type="text/javascript">
 var queryString = window.location.search.substring(1);
+if (queryString.indexOf('%') !== -1) {
+  queryString = decodeURIComponent(queryString);
+}
 window.addEventListener('load', function() {
   var elem = document.getElementById("goban");
   var player = new WGo.BasicPlayer(elem, {sgf:queryString});
